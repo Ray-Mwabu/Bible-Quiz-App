@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nextinnomind.biblequizapp.controller.LevelsViewController"
+           styleClass="levels-root">
+
+    <!-- Main vertical layout -->
+    <VBox alignment="TOP_CENTER" spacing="10" VBox.vgrow="ALWAYS">
+
+        <!-- HEADER -->
+        <VBox styleClass="levels-header" alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="10" left="20"/>
+            </padding>
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Button fx:id="backButton" text="← Back" styleClass="back-button"/>
+                <Label text="Levels" styleClass="levels-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+        </VBox>
+
+        <!-- SCROLLABLE LEVEL LIST -->
+        <ScrollPane fitToWidth="true"
+                    fitToHeight="true"
+                    VBox.vgrow="ALWAYS"
+                    styleClass="levels-scrollpane"
+                    pannable="true"
+                    hbarPolicy="NEVER">
+            <FlowPane fx:id="levelContainer"
+                      hgap="15"
+                      vgap="15"
+                      alignment="CENTER"
+                      prefWrapLength="600">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+            </FlowPane>
+        </ScrollPane>
+
+    </VBox>
+
+    <!-- Bottom nav - fixed to bottom, small height -->
+    <HBox alignment="CENTER"
+          spacing="40"
+          styleClass="bottom-nav"
+          StackPane.alignment="BOTTOM_CENTER"
+          maxHeight="60"
+          prefHeight="60">
+        <padding>
+            <Insets top="10" right="10" bottom="10" left="10"/>
+        </padding>
+        <Button styleClass="nav-button"/>
+        <Button text="Settings" styleClass="nav-button"/>
+        <Button styleClass="nav-button"/>
+
+    </HBox>
+
+    <stylesheets>
+        <URL value="@../static/style.css"/>
+    </stylesheets>
+</StackPane>
+

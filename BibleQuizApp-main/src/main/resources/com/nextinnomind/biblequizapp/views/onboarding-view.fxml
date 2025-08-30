@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.effect.*?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.nextinnomind.biblequizapp.HelloController"
+           styleClass="root-pane"
+           stylesheets="@../static/style.css">
+
+    <!-- Background Image -->
+    <ImageView fitWidth="800" fitHeight="600" preserveRatio="true" opacity="0.25" mouseTransparent="true">
+        <Image url="@../assets/the-cross.jpeg"/>
+    </ImageView>
+
+    <!-- Gradient Overlay -->
+    <Rectangle width="800" height="600" fill="linear-gradient(to bottom, rgba(30, 20, 79, 0.85) 0%, rgba(15, 10, 40, 0.9) 100%)"/>
+
+    <!-- Main UI -->
+    <VBox alignment="CENTER" spacing="35" styleClass="main-container">
+        <padding>
+            <Insets top="60" right="40" bottom="60" left="40"/>
+        </padding>
+
+        <!-- Logo -->
+        <StackPane>
+            <Circle radius="60" styleClass="logo-circle"/>
+            <ImageView fitWidth="90" fitHeight="90" preserveRatio="true" styleClass="logo-image">
+                <clip>
+                    <Circle centerX="45" centerY="45" radius="45"/>
+                </clip>
+                <Image url="@../assets/praying-hand-logo.png"/>
+            </ImageView>
+        </StackPane>
+
+        <!-- App Title -->
+        <VBox alignment="CENTER" spacing="15">
+            <Label text="Bible Quiz" styleClass="title-text">
+                <font>
+                    <Font name="Palatino Linotype" size="42"/>
+                </font>
+            </Label>
+
+            <VBox alignment="CENTER" spacing="8">
+                <Label text="Let's Play!" styleClass="subtitle-text-letsplay">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="18"/>
+                    </font>
+                </Label>
+
+                <Label text="Play now and Level up" styleClass="subtitle-text-playnow">
+                    <font>
+                        <Font name="Segoe UI Light" size="16"/>
+                    </font>
+                </Label>
+            </VBox>
+        </VBox>
+
+        <!-- Separator -->
+        <Rectangle width="800" height="60" styleClass="separator-rectangle"/>
+
+        <!-- Play Button -->
+        <Button text="Play Now" fx:id="playButton" onAction="#handlePlayButton" styleClass="menu-button">
+            <font>
+                <Font name="Segoe UI Bold" size="18"/>
+            </font>
+        </Button>
+    </VBox>
+
+</StackPane>
